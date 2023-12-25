@@ -1,0 +1,2 @@
+eth_account == 0.8.0
+curl_cffi == 0.3.7
