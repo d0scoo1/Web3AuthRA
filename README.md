@@ -28,7 +28,7 @@ The process is outlined in the figure below:
 8. The browser receives the user token, completing the Web3 authentication process.
 
 
-<img src="./Web3%20Authentication.png" alt="Web3 Authentication"/>
+<img src="./Web3%20Authentication.png" alt="Web3 Authentication" width=400/>
 
 
 ## Replay Attack
@@ -55,6 +55,18 @@ https://galxe.com
 The galxe.com's message includes a `Nonce` and `Expiration Time`. However, our findings indicate that the server fails to verify these details. Our script demonstrated the ability to use an 'old' message to successfully acquire a user's token.
 
 Message example:
+
 ```
-galxe.com wants you to sign in with your Ethereum account:\\n0x36E7C6FeB20A90b07F63863D09cC12C4c9f39064\\n\\nSign in with Ethereum to the app.\\n\\nURI: https://galxe.com\\nVersion: 1\\nChain ID: 1\\nNonce: WyiTj2tJ8VGfWzx6L\\nIssued At: 2023-04-12T10:56:11.158Z\\nExpiration Time: 2023-04-13T10:56:11.149Z\\nNot Before: 2023-04-13T10:56:11.149Z
+galxe.com wants you to sign in with your Ethereum account:
+0x36E7C6FeB20A90b07F63863D09cC12C4c9f39064
+
+Sign in with Ethereum to the app.
+
+URI: https://galxe.com
+Version: 1
+Chain ID: 1
+Nonce: WyiTj2tJ8VGfWzx6L
+Issued At: 2023-04-12T10:56:11.158Z
+Expiration Time: 2023-04-13T10:56:11.149Z
+Not Before: 2023-04-13T10:56:11.149Z
 ```
