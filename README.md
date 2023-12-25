@@ -6,7 +6,10 @@ Web3 Authentication Replay Attacks
 ```
 pip3 install -r requirements.txt
 ```
+### Vulnerability Reproduction Scripts
+The folder `Scripts` includes two key scripts that demonstrate the vulnerabilities within the Web3 authentication processes of Foundation.app and Galxe.com. These scripts provide a practical insight into how the replay attacks can be executed, highlighting the security flaws in the respective systems.
 
+It is important to note that these scripts are provided for educational and security research purposes only. Users are urged to use them responsibly and in accordance with ethical guidelines and legal regulations.
 
 
 ## Web3 Authentication
