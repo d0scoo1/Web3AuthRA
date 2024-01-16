@@ -17,7 +17,8 @@ The process is outlined in the figure below:
 8. The browser receives the user token, completing the Web3 authentication process.
 
 
-<img src="./Web3%20Authentication.png" alt="Web3 Authentication" width=400/>
+
+<img src="https://github.com/d0scoo1/Web3AuthRA/assets/13929425/d7e28a11-d0c0-4433-9411-13a8730a7b17" alt="Web3 Authentication" width=400/>
 
 
 ## Replay Attack
@@ -60,5 +61,4 @@ Expiration Time: 2023-04-13T10:56:11.149Z
 Not Before: 2023-04-13T10:56:11.149Z
 ```
 
-![Web3 Authentication](https://github.com/d0scoo1/Web3AuthRA/assets/13929425/d7e28a11-d0c0-4433-9411-13a8730a7b17)
 
