@@ -1,5 +1,77 @@
-# Web3AuthRA
-Web3 Authentication Replay Attacks
+
+### foundation.app
+
+[CVE ID]
+CVE-2023-50053
+
+[Description]
+In the Web3 authentication process of Foundation, the signed message lacks a nonce (random number), leading to replay attacks.
+
+[Vendor of Product]
+Foundation.app
+
+[Affected Product Code Base]
+Foundation platform - 1.0
+
+[Vulnerability Type Other]
+Replay Attack
+
+[Reference]
+https://foundation.app/
+
+---
+Foundation.app's message structure is vulnerable due to the absence of a nonce. 
+This omission exposes the Web3 authentication process to replay attacks.
+
+Message example:
+```
+Please sign this message to connect to Foundation.
+```
+
+### galxe.com
+
+[CVE ID]
+CVE-2023-50059
+
+[Description]
+In the Web3 authentication process of Galxe, the server does not check the random number, leading to replay attacks.
+
+[Vendor of Product]
+galxe.com
+
+[Affected Product Code Base]
+Galxe platform - 1.0
+
+[Vulnerability Type Other]
+Replay Attack
+
+[Reference]
+https://galxe.com
+
+---
+
+The galxe.com's message includes a `Nonce` and `Expiration Time`. However, our findings indicate that the server fails to verify these details. 
+Therefore, once an attacker obtains a user's signature, they can replay the signature and gain access to the user's account.
+
+Message example:
+
+```
+galxe.com wants you to sign in with your Ethereum account:
+0x36E7C6FeB20A90b07F63863D09cC12C4c9f39064
+
+Sign in with Ethereum to the app.
+
+URI: https://galxe.com
+Version: 1
+Chain ID: 1
+Nonce: WyiTj2tJ8VGfWzx6L
+Issued At: 2023-04-12T10:56:11.158Z
+Expiration Time: 2023-04-13T10:56:11.149Z
+Not Before: 2023-04-13T10:56:11.149Z
+```
+
+
+# Web3 Authentication Replay Attacks
 
 ## Web3 Authentication
 
@@ -23,42 +95,10 @@ The process is outlined in the figure below:
 
 ## Replay Attack
 
-A secure message should incorporate a `nonce` or `timestamp` to prevent replay attacks. The server must validate the message to ensure its legitimacy.
+A secure message should incorporate a `nonce` or `timestamp` to prevent replay attacks. The server must check the message to ensure its legitimacy.
 
 Without a nonce or proper server-side validation, an attacker could potentially use a previously obtained user signature to access the user's account by replaying the signature.
 
 
-### foundation.app
-https://Foundation.app 
-
-Foundation.app's message structure is vulnerable due to the absence of a nonce. 
-This omission exposes the Web3 authentication process to replay attacks.
-
-Message example:
-```
-Please sign this message to connect to Foundation.
-```
-
-### galxe.com
-https://galxe.com
-
-The galxe.com's message includes a `Nonce` and `Expiration Time`. However, our findings indicate that the server fails to verify these details. We can use an 'old' message to successfully acquire a user's token.
-
-Message example:
-
-```
-galxe.com wants you to sign in with your Ethereum account:
-0x36E7C6FeB20A90b07F63863D09cC12C4c9f39064
-
-Sign in with Ethereum to the app.
-
-URI: https://galxe.com
-Version: 1
-Chain ID: 1
-Nonce: WyiTj2tJ8VGfWzx6L
-Issued At: 2023-04-12T10:56:11.158Z
-Expiration Time: 2023-04-13T10:56:11.149Z
-Not Before: 2023-04-13T10:56:11.149Z
-```
 
 
